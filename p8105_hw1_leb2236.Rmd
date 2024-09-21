@@ -1,0 +1,8 @@
+---
+title: "p8105_hw1_leb2236"
+author: Laura Bulmer
+output: github_document
+date: "2024-09-21"
+---
+
+
