@@ -33,6 +33,19 @@ and `r ncol(penguins)` columns.
 The mean flipper length is `r mean(pull(penguins, flipper_length_mm), 
 na.rm = TRUE)`. 
 
+#### Scatterplot of flipper length vs bill length
+
+We will use the code below to generate the scatter plot and then to save it
+as a pdf to our directory.
+
+```{r}
+ggplot(penguins, aes(
+  x = bill_length_mm, 
+  y = flipper_length_mm,
+  color = species)) + geom_point()
+
+ggsave("scatter_plot.pdf", height = 4, width = 6)
+```
 
 
 
