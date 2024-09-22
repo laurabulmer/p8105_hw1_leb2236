@@ -38,7 +38,7 @@ na.rm = TRUE)`.
 We will use the code below to generate the scatter plot and then to save it
 as a pdf to our directory.
 
-```{r}
+```{r creating and saving plot}
 ggplot(penguins, aes(
   x = bill_length_mm, 
   y = flipper_length_mm,
@@ -47,6 +47,19 @@ ggplot(penguins, aes(
 ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
 
+# Problem 2
+
+#### Creating the data frame
+
+```{r creating df}
+homework_df = tibble(
+  sample = rnorm(10),
+  log_vec = sample > 0,
+  char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+  factor_vec = factor(c("low", "low", "low", "low", "low", "medium", "medium",
+                        "medium", "high", "high"))
+)
+```
 
 
 
