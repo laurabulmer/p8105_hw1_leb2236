@@ -5,4 +5,35 @@ output: github_document
 date: "2024-09-21"
 ---
 
+```{r setup, include = FALSE}
+library(tidyverse)
+```
+
+# Problem 1
+
+I installed the package containing the penguin dataset and will now 
+load the penguin dataset.
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+#### Description of the Penguins dataset
+
+The dataset penguins contains data regarding observed penguins.
+
+The 8 variables included in the dataset are species of penguin ('species'), 
+island ('island'), bill 
+length in mm ('bill_length_mm'), bill depth in mm ('bill_depth_mm'), flipper
+length in mm ('flipper_length_mm'), body mass in grams ('body_mass_g'), 
+sex, and year.
+
+In this dataset, there are `r nrow(penguins)` rows/observations
+and `r ncol(penguins)` columns. 
+The mean flipper length is `r mean(pull(penguins, flipper_length_mm), 
+na.rm = TRUE)`. 
+
+
+
+
 
