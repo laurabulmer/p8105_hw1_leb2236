@@ -14,7 +14,7 @@ library(tidyverse)
 I installed the package containing the penguin dataset and will now 
 load the penguin dataset.
 
-```{r}
+```{r loading_data}
 data("penguins", package = "palmerpenguins")
 ```
 
@@ -38,7 +38,7 @@ na.rm = TRUE)`.
 We will use the code below to generate the scatter plot and then to save it
 as a pdf to our directory.
 
-```{r creating and saving plot}
+```{r plotting}
 ggplot(penguins, aes(
   x = bill_length_mm, 
   y = flipper_length_mm,
@@ -53,7 +53,7 @@ ggsave("scatter_plot.pdf", height = 4, width = 6)
 
 The code below is used to create a data frame.
 
-```{r creating df}
+```{r creating_df}
 homework_df = tibble(
   sample = rnorm(10),
   log_vec = sample > 0,
@@ -65,7 +65,7 @@ homework_df = tibble(
 
 #### Taking the mean of each variable
 
-```{r}
+```{r taking_the_means}
 mean(pull(homework_df, sample))
 mean(pull(homework_df, log_vec))
 mean(pull(homework_df, char_vec))
@@ -75,5 +75,21 @@ mean(pull(homework_df, factor_vec))
 We are able to take the mean of the sample and the logical vector,
 but not the character or factor vectors.
 
+#### Applying the as.numeric function
 
+```{r converting_to_numeric, results = "hide"}
+as.numeric(pull(homework_df,log_vec))
+as.numeric(pull(homework_df,char_vec))
+as.numeric(pull(homework_df,factor_vec))
+```
 
+Applying the as.numeric function to these variables had different outcomes. 
+
+* The logical vector was successfully converted, which makes sense as we were 
+able to take the mean. 
+* The character vector was converted to NAs, which also 
+makes sense as we couldn't take the mean for that variable. 
+* The factor vector was coverted, however the numbers don't make sense with the 
+levels that were set. Given we weren't able to take the mean, I wasn't 
+expecting the numeric conversion to work well.It appears they were converted 
+based on the alphabetical order of the levels set.
