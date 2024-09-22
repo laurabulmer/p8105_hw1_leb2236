@@ -35,8 +35,8 @@ na.rm = TRUE)`.
 
 #### Scatterplot of flipper length vs bill length
 
-We will use the code below to generate the scatter plot and then to save it
-as a pdf to our directory.
+I used the code below to generate the scatter plot and then to save it
+as a pdf to the directory.
 
 ```{r plotting}
 ggplot(penguins, aes(
